@@ -14,9 +14,9 @@ export const contact = {
 export const implantPath = "/all-on-4-all-on-6-dental-implants-vietnam";
 export const slides = [
   { image: "clinic.webp", position: "center 35%", fit: "cover", title: "Innovative Dentistry. Confident Smiles.", description: "Personalised dental implants and tooth restoration in Ho Chi Minh City, Vietnam.", href: "", first: true },
-  { image: "consultation.webp", position: "center 40%", fit: "cover", title: "Experienced Specialists. Personalised Care.", description: "A dental team that listens to your concerns and guides you through your treatment journey.", href: "/doctors" },
-  { image: "hero.webp", position: "right center", fit: "contain", title: "Modern Technology for Your Dental Journey", description: "Digital diagnosis and personalised treatment planning, with your comfort in mind.", href: "/#services" },
-  { image: "team.webp", position: "center 30%", fit: "cover", title: "More Than a Clinic. Your Smile Partner.", description: "We listen, we care, we treat you.", href: "/#about" },
+  { image: "consultation.webp", position: "center 40%", fit: "cover", title: "Experienced Specialists. Personalised Care.", description: "A dental team that listens to your concerns and guides you through your treatment journey.", href: "#dentists" },
+  { image: "hero.webp", position: "right center", fit: "contain", title: "Modern Technology for Your Dental Journey", description: "Digital diagnosis and personalised treatment planning, with your comfort in mind.", href: "#services" },
+  { image: "team.webp", position: "center 30%", fit: "cover", title: "More Than a Clinic. Your Smile Partner.", description: "We listen, we care, we treat you.", href: "#about" },
 ];
 export const introduction = [
   "SQ Dentist International provides officially licensed dental care in Ho Chi Minh City for patients who expect clinical precision and a calmer journey.",

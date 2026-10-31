@@ -51,7 +51,7 @@ function Hero() {
         {slide.first && <div className="rating">SQ DENTIST INTERNATIONAL <span>HO CHI MINH CITY, VIETNAM</span></div>}
         {slide.first ? <h1>{slide.title.slice(0, slide.title.indexOf(". ") + 2)}<span className="hero-gold">{slide.title.slice(slide.title.indexOf(". ") + 2)}</span></h1> : <h2>{slide.title}</h2>}
         <p>{slide.description}</p>
-        {slide.href && <a className="hero-read" tabIndex={active === index ? 0 : -1} href={`${origin}${slide.href}`}>Read more <Arrow /></a>}
+        {slide.href && <a className="hero-read" tabIndex={active === index ? 0 : -1} href={slide.href.startsWith("#") ? slide.href : `${origin}${slide.href}`}>Read more <Arrow /></a>}
       </div>
     </div>)}
     <button className="hero-prev" aria-label="Previous highlight" onClick={() => move(-1)}>‹</button><button className="hero-next" aria-label="Next highlight" onClick={() => move(1)}>›</button>
