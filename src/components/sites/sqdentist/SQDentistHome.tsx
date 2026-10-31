@@ -19,37 +19,17 @@ function Action({ children, href = "#footer", light = false }: { children: React
 }
 
 function Header() {
-  const [open, setOpen] = useState(false);
-  const [services, setServices] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const toggleRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 35);
-    const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape" && (open || services)) {
-        setOpen(false);
-        setServices(false);
-        if (open) toggleRef.current?.focus();
-      }
-    };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("keydown", onKey);
-    return () => { window.removeEventListener("scroll", onScroll); window.removeEventListener("keydown", onKey); };
-  }, [open, services]);
-  return <header className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " menu-open" : ""}`}>
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
     <div className="announcement"><span>Dental Care for International Patients</span><a href={contact.phoneHref}><Arrow /> {contact.phone}</a></div>
     <div className="nav-wrap">
-      <a className="brand" href="#top" aria-label="Back to top — SQ Dentist International" onClick={() => { setOpen(false); setServices(false); }}><img src={`${media}logo-gold.png`} width="1847" height="371" alt="SQ Dentist International" /></a>
-      <button ref={toggleRef} className="menu-toggle" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>{open ? "×" : <span><i /><i /><i /></span>}</button>
-      <nav id="main-navigation" className={open ? "navigation opened" : "navigation"} aria-label="Main navigation">
-        <Link href="/" onClick={() => setOpen(false)}>Home</Link>
-        <div className="services-menu" onMouseEnter={() => { if (window.matchMedia("(min-width: 768px)").matches) setServices(true); }} onMouseLeave={() => { if (window.matchMedia("(min-width: 768px)").matches) setServices(false); }}>
-          <button aria-expanded={services} aria-controls="services-dropdown" onClick={() => setServices(current => window.matchMedia("(min-width: 768px)").matches ? true : !current)}>Services</button>
-          {services && <div className="services-dropdown" id="services-dropdown"><h2>Services</h2><a href={`${origin}${implantPath}`}>Dental Implants <Arrow /></a><a href={`${origin}/dental-tourism-vietnam`}>Vietnam Dental Tourism <Arrow /></a><a href="#dentists" onClick={() => {setOpen(false);setServices(false);}}>Meet Our Dentists <Arrow /></a></div>}
-        </div>
-        <a href="#results" onClick={() => setOpen(false)}>Results</a><a href="#about" onClick={() => setOpen(false)}>About Us</a><a href="#footer" onClick={() => setOpen(false)}>Contact</a>
-      </nav>
+      <a className="brand" href="#top" aria-label="Back to top — SQ Dentist International"><img src={`${media}logo-gold.png`} width="1847" height="371" alt="SQ Dentist International" /></a>
       <a className="call-now" href={contact.phoneHref}><span aria-hidden="true">☎</span> Call Now</a>
     </div>
   </header>;
