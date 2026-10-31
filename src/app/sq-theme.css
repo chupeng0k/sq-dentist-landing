@@ -308,3 +308,28 @@ strong,b,.floating-contact strong { font-weight:500; }
   .video-card figcaption { padding:14px 18px; }
   .video-card:not(.video-landscape) { width:100%; max-width:380px; justify-self:center; }
 }
+
+/* Compact brand/contact header, without a separate announcement strip. */
+.landing-header { position:fixed; inset:0 0 auto; z-index:100; color:#15191d; background:rgba(244,247,249,.96); border-bottom:1px solid #dce3e8; backdrop-filter:blur(16px); }
+.landing-header-inner { max-width:1200px; height:82px; padding-inline:24px; margin-inline:auto; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+.landing-header-brand { min-width:0; display:flex; align-items:center; gap:26px; }
+.landing-header-brand>a { display:block; flex-shrink:0; }
+.landing-header-brand>a img { width:184px; height:auto; }
+.landing-header-brand>p { margin:0; padding-left:26px; border-left:1px solid #c8d4db; font-size:13px; line-height:1.5; color:#59636d; }
+.landing-header-brand>p span { color:#80601f; font-weight:500; }
+.landing-header-phone { display:flex; align-items:center; gap:12px; flex-shrink:0; padding:11px 22px; border:1px solid #1e2022; border-radius:999px; background:#1e2022; color:#fff; transition:background .2s; }
+.landing-header-phone:hover { background:#000; }
+.landing-header-phone>img { width:19px; height:19px; filter:brightness(0) invert(1); }
+.landing-header-phone>span { display:flex; flex-direction:column; gap:3px; }
+.landing-header-phone small { font-size:11px; line-height:1.2; color:#e3e8ec; }
+.landing-header-phone strong { font-size:15px; line-height:1.2; font-weight:500; white-space:nowrap; }
+.landing-header a:focus-visible { outline:2px solid #80601f; outline-offset:4px; }
+@media(max-width:767px) {
+  .landing-header-inner { height:72px; padding-inline:16px; gap:12px; }
+  .landing-header-brand>a img { width:130px; }
+  .landing-header-brand>p { display:none; }
+  .landing-header-phone { padding:10px 14px; gap:8px; }
+  .landing-header-phone>img { display:none; }
+  .landing-header-phone small { font-size:10px; }
+  .landing-header-phone strong { font-size:12px; }
+}

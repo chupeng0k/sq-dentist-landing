@@ -19,18 +19,16 @@ function Action({ children, href = "#footer", light = false }: { children: React
 }
 
 function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 35);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-  return <header className={`site-header${scrolled ? " is-scrolled" : ""}`}>
-    <div className="announcement"><span>Dental Care for International Patients</span><a href={contact.phoneHref}><Arrow /> {contact.phone}</a></div>
-    <div className="nav-wrap">
-      <a className="brand" href="#top" aria-label="Back to top — SQ Dentist International"><img src={`${media}logo-gold.png`} width="1847" height="371" alt="SQ Dentist International" /></a>
-      <a className="call-now" href={contact.phoneHref}><span aria-hidden="true">☎</span> Call Now</a>
+  return <header className="landing-header">
+    <div className="landing-header-inner">
+      <div className="landing-header-brand">
+        <a href="#top" aria-label="Back to top: SQ Dentist International"><img src={`${media}logo-gold.png`} width="1847" height="371" alt="SQ Dentist International" /></a>
+        <p>Dental Care for<br /><span>International Patients</span></p>
+      </div>
+      <a className="landing-header-phone" href={contact.phoneHref} aria-label={`Call SQ Dentist: ${contact.phone}`}>
+        <img src={`${iconMedia}phone.svg`} width="20" height="20" alt="" />
+        <span><small>Call SQ Dentist</small><strong>{contact.phone}</strong></span>
+      </a>
     </div>
   </header>;
 }
