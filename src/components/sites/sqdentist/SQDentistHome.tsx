@@ -18,17 +18,52 @@ function Action({ children, href = "#footer", light = false }: { children: React
   return <a href={href} className={`action${light ? " action-light" : ""}`}>{children}<Arrow /></a>;
 }
 
+const headerLinks = [
+  { label: "Home", href: "#top" },
+  { label: "About Us", href: "#about" },
+  { label: "Warranty", href: `${origin}/warranty` },
+  { label: "Services", href: "#services" },
+  { label: "Results", href: "#results" },
+  { label: "Contact Us", href: "#footer" },
+];
+
 function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [active, setActive] = useState("#top");
+  const toggle = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape" && menuOpen) {
+        setMenuOpen(false);
+        toggle.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [menuOpen]);
+  useEffect(() => {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) setActive(`#${entry.target.id}`);
+      });
+    }, { rootMargin: "-90px 0px -55% 0px", threshold: 0 });
+    headerLinks.filter(link => link.href.startsWith("#")).forEach(link => {
+      const element = document.getElementById(link.href.slice(1));
+      if (element) observer.observe(element);
+    });
+    return () => observer.disconnect();
+  }, []);
   return <header className="landing-header">
     <div className="landing-header-inner">
-      <div className="landing-header-brand">
-        <a href="#top" aria-label="Back to top: SQ Dentist International"><img src={`${media}logo-gold.png`} width="1847" height="371" alt="SQ Dentist International" /></a>
-        <p>Dental Care for<br /><span>International Patients</span></p>
-      </div>
-      <a className="landing-header-phone" href={contact.phoneHref} aria-label={`Call SQ Dentist: ${contact.phone}`}>
-        <img src={`${iconMedia}phone.svg`} width="20" height="20" alt="" />
-        <span><small>Call SQ Dentist</small><strong>{contact.phone}</strong></span>
+      <a className="landing-header-logo" href="#top" aria-label="SQ Dentist International home" onClick={() => setMenuOpen(false)}><img src={`${media}logo-gold.png`} width="1847" height="371" alt="SQ Dentist International" /></a>
+      <nav id="sq-landing-navigation" className={`landing-header-nav${menuOpen ? " is-open" : ""}`} aria-label="Main navigation">
+        {headerLinks.map(link => <a key={link.label} href={link.href} aria-current={active === link.href ? "location" : undefined} onClick={() => { setMenuOpen(false); if (link.href.startsWith("#")) setActive(link.href); }}>{link.label}</a>)}
+      </nav>
+      <a className="landing-header-location" href={contact.map} aria-label="Find SQ Dentist in Ho Chi Minh City, Vietnam">
+        <svg width="12" height="12" viewBox="0 0 64 64" fill="currentColor" aria-hidden="true"><path d="m32 0a24.0319 24.0319 0 0 0 -24 24c0 17.23 22.36 38.81 23.31 39.72a.99.99 0 0 0 1.38 0c.95-.91 23.31-22.49 23.31-39.72a24.0319 24.0319 0 0 0 -24-24zm0 35a11 11 0 1 1 11-11 11.0066 11.0066 0 0 1 -11 11z" /></svg>
+        <span>HO CHI MINH CITY, VIETNAM</span>
       </a>
+      <button ref={toggle} className="landing-header-toggle" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} aria-controls="sq-landing-navigation" onClick={() => setMenuOpen(open => !open)}><span aria-hidden="true">{menuOpen ? "×" : "☰"}</span></button>
     </div>
   </header>;
 }
