@@ -183,8 +183,8 @@ function Footer() {
   </footer>;
 }
 
-export function SQDentistHome() {
-  return <><a className="skip-link" href="#content">Skip to content</a><Header />
+export function SQDentistHome({ showHeader = true }: { showHeader?: boolean } = {}) {
+  return <><a className="skip-link" href="#content">Skip to content</a>{showHeader && <Header />}
     <main id="content"><Hero /><div className="white-panel primary-panel">
       <section className="introduction section-inner" id="about">
         <div className="intro-photo"><img src={`${media}team.webp`} alt="A SQ Dentist clinician consulting with an international patient" width="1728" height="2160" /></div>
