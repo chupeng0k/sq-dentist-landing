@@ -1,0 +1,76 @@
+[
+  {
+    "file": "ERIC -THAILAND.mp4",
+    "bytes": 151001862,
+    "media": [
+      "Duration: 00:00:59.68, start: 0.000000, bitrate: 20242 kb/s",
+      "Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1440x2560 [SAR 1:1 DAR 9:16], 20045 kb/s, 30 fps, 30 tbr, 30 tbn, 60 tbc (default)"
+    ],
+    "poster": "posters/eric.jpg",
+    "webFile": "web/eric.mp4",
+    "webBytes": 10373454,
+    "fastStart": true
+  },
+  {
+    "file": "stuart thailand pv.mp4",
+    "bytes": 90848229,
+    "media": [
+      "Duration: 00:00:36.15, start: 0.000000, bitrate: 20102 kb/s",
+      "Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1440x2560 [SAR 1:1 DAR 9:16], 19912 kb/s, 30 fps, 30 tbr, 30 tbn, 60 tbc (default)"
+    ],
+    "poster": "posters/stuart.jpg",
+    "webFile": "web/stuart.mp4",
+    "webBytes": 5799011,
+    "fastStart": true
+  },
+  {
+    "file": "video 17-9 1.mp4",
+    "bytes": 109582119,
+    "media": [
+      "Duration: 00:01:11.22, start: 0.000000, bitrate: 12309 kb/s",
+      "Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1080x1920 [SAR 1:1 DAR 9:16], 12112 kb/s, 30 fps, 30 tbr, 30 tbn, 60 tbc (default)"
+    ],
+    "poster": "posters/sq-dentist.jpg",
+    "webFile": "web/sq-dentist.mp4",
+    "webBytes": 15655213,
+    "fastStart": true
+  },
+  {
+    "file": "VIDEO pv JOHN SWEENEY.mp4",
+    "bytes": 403389324,
+    "media": [
+      "Duration: 00:02:37.48, start: 0.000000, bitrate: 20492 kb/s",
+      "Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 2560x1440 [SAR 1:1 DAR 16:9], 20294 kb/s, 30 fps, 30 tbr, 30 tbn, 60 tbc (default)"
+    ],
+    "poster": "posters/john-sweeney.jpg",
+    "webFile": "web/john-sweeney.mp4",
+    "webBytes": 20944789,
+    "fastStart": true
+  },
+  {
+    "file": "PETER KELLY - THAILAND.mp4",
+    "bytes": 152794852,
+    "media": [
+      "Duration: 00:00:59.68, start: 0.000000, bitrate: 20483 kb/s",
+      "Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1440x2560 [SAR 1:1 DAR 9:16], 20277 kb/s, 30 fps, 30 tbr, 30 tbn, 60 tbc (default)"
+    ],
+    "poster": "posters/peter-kelly.jpg",
+    "webFile": "web/peter-kelly.mp4",
+    "landscape": false,
+    "webBytes": 9939302,
+    "fastStart": true
+  },
+  {
+    "file": "VIDEO 22-6 MRS SASIYA.mp4",
+    "bytes": 223322571,
+    "media": [
+      "Duration: 00:01:27.47, start: 0.000000, bitrate: 20425 kb/s",
+      "Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1440x2560 [SAR 1:1 DAR 9:16], 20225 kb/s, 30 fps, 30 tbr, 30 tbn, 60 tbc (default)"
+    ],
+    "poster": "posters/sasiya.jpg",
+    "webFile": "web/sasiya.mp4",
+    "landscape": false,
+    "webBytes": 12249626,
+    "fastStart": true
+  }
+]

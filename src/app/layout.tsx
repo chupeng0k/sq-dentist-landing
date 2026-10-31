@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
+import "./sq-theme.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const sqHelvetica = localFont({
+  src: [
+    { path: "../../public/sites/sqdentist/fonts/helvetica-neue-thin.ttf", weight: "100", style: "normal" },
+    { path: "../../public/sites/sqdentist/fonts/helvetica-neue-roman.ttf", weight: "400", style: "normal" },
+    { path: "../../public/sites/sqdentist/fonts/helvetica-neue-medium.ttf", weight: "500", style: "normal" },
+  ],
+  variable: "--font-sq-helvetica",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  title: "SQ Dentist International | Dental Care in Vietnam",
+  description: "Dental implants and tooth restoration at SQ Dentist International in Ho Chi Minh City, Vietnam.",
+  robots: { index: false, follow: false },
+  icons: { icon: "/sites/sqdentist/favicon.png" },
 };
 
 export default function RootLayout({
@@ -23,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="en" className={sqHelvetica.variable}>
+      <body>{children}</body>
     </html>
   );
 }

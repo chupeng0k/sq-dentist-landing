@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Dr. Le Thi Hien",
+    "source": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\codex-clipboard-0e7fa26b-1287-43c5-913c-09fff692ee74.png",
+    "local": "public\\sites\\sqdentist\\doctors\\dr-le-thi-hien.png",
+    "sha256": "5090cd24e5c35bcd99594e3e326875f8608fe44c53390853cd2954991729bc10",
+    "originalUnchanged": true,
+    "copySource": "User-provided biography and attachment, in supplied order"
+  },
+  {
+    "name": "Dr. Hoang Phan Bich Nghi",
+    "source": "C:\\Users\\ASUS\\AppData\\Local\\Temp\\codex-clipboard-80476304-873b-4061-9c53-0b0d3634d51e.webp",
+    "local": "public\\sites\\sqdentist\\doctors\\dr-hoang-phan-bich-nghi.webp",
+    "sha256": "d7d33a7ed4f2082cb7352603e078d5066b5e6424ee5e6964496982d519fbd142",
+    "originalUnchanged": true,
+    "copySource": "User-provided biography and attachment, in supplied order"
+  },
+  {
+    "name": "Dr. Nguyen Viet Hung",
+    "source": "D:\\BS PNG\\BS_HUNG.png",
+    "local": "public\\sites\\sqdentist\\doctors\\dr-nguyen-viet-hung.png",
+    "sha256": "1d6014cde735cc5a7cd56156c3767a548bc07e5a185fd6c16b712c24cddb11ef",
+    "originalUnchanged": true,
+    "copySource": "User-provided biography and attachment, in supplied order"
+  }
+]
